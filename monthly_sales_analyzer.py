@@ -60,7 +60,21 @@ def days_above_threshold(data, product_key, threshold):
 
 def top_product(data):
     """Determines which product had the highest total sales in 30 days."""
-    pass
+    products = {'product_a': 0, 'product_b': 0, 'product_c': 0}
+    total = 0
+    for row in data:
+        products['product_a'] += row['product_a']
+        products['product_b'] += row['product_b']
+        products['product_c'] += row['product_c']
+    for keys, value in products.items():
+        if value > total:
+            total = value
+    return keys
+    
+
+    
+
+    
 
 
 
